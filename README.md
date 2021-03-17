@@ -14,7 +14,7 @@ Commit your code regularly and meaningfully. This helps both you and your team l
 
 ## Introduction
 
-In this project you will build out a application to show the NASA photo of the day.
+In this project you will build out an application to show the NASA photo of the day.
 
 - This is a really fun project, and one to show your family and friends when you've finished.
 - You will be starting from scratch and building the entire app
@@ -27,11 +27,11 @@ In this project you will build out a application to show the NASA photo of the d
 
 This project was put together using create-react-app (CRA). You will not need to install CRA in order to make this project work. Follow the steps below to setup the project with the proper dependencies.
 
-- [ ] Create a forked copy of this project.
-- [ ] Clone your OWN version of the repository in your terminal
-- [ ] Download project dependencies by running `npm install`
-- [ ] Start up the app using `npm start`
-- [ ] Create a new branch: `git checkout -b <firstName-lastName>`.
+- [x] Create a forked copy of this project.
+- [x] Clone your OWN version of the repository in your terminal
+- [x] Download project dependencies by running `npm install`
+- [x] Start up the app using `npm start`
+- [x] Create a new branch: `git checkout -b <firstName-lastName>`.
 - [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
 - [ ] Push commits: `git push origin <firstName-lastName>`.
 
@@ -39,8 +39,8 @@ This project was put together using create-react-app (CRA). You will not need to
 
 **Planning**
 
-- [ ] If you want, this is the time to make a simple design spec (look up ["simple wireframes"](https://www.google.com/search?q=simple+wireframes) to find resources & examples). **A pen & paper sketch (or outline) is often the fastest way to start your planning.**
-- [ ] Once you have a design plan in mind, break down the designs into individual components.
+- [x] If you want, this is the time to make a simple design spec (look up ["simple wireframes"](https://www.google.com/search?q=simple+wireframes) to find resources & examples). **A pen & paper sketch (or outline) is often the fastest way to start your planning.**
+- [x] Once you have a design plan in mind, break down the designs into individual components.
 - [ ] Plan which components will hold state, what data each needs from props (if any), and where you will be making your data fetch.
 - [ ] Now it's time to jump into the code!
 
