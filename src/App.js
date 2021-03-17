@@ -32,7 +32,10 @@ function App() {
       </p>
       {
         <Header date={imageData.date} />
-        }
+      }
+      {
+        <Image hdurl={imageData.hdurl} title={imageData.title} copyright={imageData.copyright} />
+      }
     </div>
     // <div>
     // </div>
