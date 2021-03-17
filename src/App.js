@@ -36,6 +36,9 @@ function App() {
       {
         <Image hdurl={imageData.hdurl} title={imageData.title} copyright={imageData.copyright} />
       }
+      {
+        <Details explanation={imageData.explanation} />
+      }
     </div>
     // <div>
     // </div>
