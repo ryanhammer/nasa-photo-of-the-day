@@ -5,7 +5,7 @@ import React from 'react';
 export default function Image (props) {
   return (
     <section className='image-container'>
-      <img src={props.hdurl} alt={props.title}></img>
+      <img src={props.url} alt={props.title}></img>
       <figcaption>Photo courtesy of {props.copyright}</figcaption>
     </section>
   );

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 // The app will display the data from the NASA API. This requires an API Key as well as a specific URL for the daily image data
 import { BASE_URL, API_KEY } from './constants';
-// import axios from 'axios';
+import axios from 'axios';
 
 // Header.js will provide the header component for the app
 import Header from './Header';
@@ -16,9 +16,8 @@ function App() {
   const [imageData, setImageData] = useState({});
 
   useEffect( () => {
-    fetch(`${BASE_URL}?api_key=${API_KEY}`)
-      .then( res => res.json())
-      .then( json => setImageData(json))
+    axios.get(`${BASE_URL}?api_key=${API_KEY}`)
+      .then( res => setImageData(res.data))
       .catch( err => {
         console.log(err);
       })
@@ -39,7 +38,7 @@ function App() {
         <Header date={moment(imageData.date).format('LL')} />
       }
       {
-        <Image hdurl={imageData.hdurl} title={imageData.title} copyright={imageData.copyright} />
+        <Image url={imageData.url} title={imageData.title} copyright={imageData.copyright} />
       }
       {
         <Details explanation={imageData.explanation} />
