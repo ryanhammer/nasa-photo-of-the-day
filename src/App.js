@@ -23,15 +23,20 @@ function App() {
         console.log(err);
       })
   }, []);
-  console.log(imageData.date);
+  
+  // Use moment.js to convert date and time formats
+  const moment = require('moment');
+  
   return (
     <div className='App'>
       <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun <span role='img' aria-label='go!'>🚀</span>!
       </p>
+      <input type="date" min="2017-08-15" max="2018-08-26" ></input>
+      
       {
-        <Header date={imageData.date} />
+        <Header date={moment(imageData.date).format('LL')} />
       }
       {
         <Image hdurl={imageData.hdurl} title={imageData.title} copyright={imageData.copyright} />
