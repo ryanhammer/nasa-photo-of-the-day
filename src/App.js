@@ -19,9 +19,8 @@ function App() {
   // Create slice of state for both date and called data
   const currentDate = moment(Date()).format('YYYY-MM-DD');
   const [inputDate, setInputDate] = useState(currentDate);
-  // console.log(inputDate);
   const [imageData, setImageData] = useState({});
-  // const newDate = document.addEventListener
+ 
 
   const getNewDate = () => {
     setInputDate(document.querySelector('input').value);
@@ -30,7 +29,6 @@ function App() {
 
 
   useEffect( () => {
-    // axios.get(`${BASE_URL}?api_key=${API_KEY}`)
     axios.get(`${BASE_URL}?api_key=${API_KEY}&date=${inputDate}`)
       .then( res => setImageData(res.data))
       .catch( err => {
@@ -49,11 +47,7 @@ function App() {
         <Header date={inputDate} />
       }
       {
-        <form>
-          <label>Select any date after June 16, 1995:</label>
-          <input type='date' min='1995-06-16' max= {currentDate} ></input>
-          <button id='subButton' onClick= {getNewDate} >Get Image</button>
-        </form>
+
       }
       {
         <Image url={imageData.url} title={imageData.title} copyright={imageData.copyright} />
