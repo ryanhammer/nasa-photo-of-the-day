@@ -4,11 +4,11 @@ import { BASE_URL, API_KEY } from './constants';
 import axios from 'axios';
 
 // Header.js will provide the header component for the app
-import Header from './Header';
+import Header from './components/Header';
 // Image.js will provide the image component
-import Image from './Image';
+import Image from './components/Image';
 // Details.js will provide components with information about the image
-import Details from './Details';
+import Details from './components/Details';
 // Style the App
 import './App.css';
 
