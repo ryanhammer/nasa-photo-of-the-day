@@ -7,7 +7,7 @@ import App from "./App";
 
 ReactDOM.render(
   <ThemeProvider theme={Theme}>
-  <App />
+    <App className='App'/>
   </ThemeProvider>,
   document.getElementById("root")
 );
