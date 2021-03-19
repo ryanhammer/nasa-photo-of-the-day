@@ -9,8 +9,7 @@ import Header from './Header';
 import Image from './Image';
 // Details.js will provide components with information about the image
 import Details from './Details';
-// Style the App using styled components
-// import styled from 'styled-components';
+// Style the App
 import './App.css';
 
 function App() {
@@ -39,20 +38,9 @@ function App() {
       })
   }, [inputDate]);
   
-//   const StyledApp = styled.div`
-//   color: 'purple';
-//   width: 60%;
-//   display: 'flex';
-//   flexDirection: 'column';
-//   alignItems: 'center';
-//   justifyContent: 'space-evenly';
-//   textAlign: 'center';
-//   marginLeft: 10%;
-// `;
-
 
   return (
-    <App >
+    <div className='App'>
       {/* <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun <span role='img' aria-label='go!'>🚀</span>!
@@ -73,9 +61,7 @@ function App() {
       {
         <Details explanation={imageData.explanation} />
       }
-    </App>
-    // <div>
-    // </div>
+    </div>
   );
 }
 
