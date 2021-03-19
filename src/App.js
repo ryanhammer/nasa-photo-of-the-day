@@ -16,25 +16,23 @@ function App() {
   // Use moment.js to convert date and time formats
   const moment = require('moment');
   
-  // Create slice of state for both date and called data
-  const currentDate = moment(Date()).format('YYYY-MM-DD');
-  const [inputDate, setInputDate] = useState(currentDate);
+//  Create a slice of state for API url and called data
+  const [callURL, setCallURL] = useState(`${BASE_URL}?api_key=${API_KEY}`);
   const [imageData, setImageData] = useState({});
  
 
-  const getNewDate = () => {
-    setInputDate(document.querySelector('input').value);
-    console.log(inputDate);
+  const getNewImage = () => {
+    setCallURL(`${BASE_URL}?api_key=${API_KEY}&count=1`);
   }
 
 
   useEffect( () => {
-    axios.get(`${BASE_URL}?api_key=${API_KEY}&date=${inputDate}`)
+    axios.get(callURL)
       .then( res => setImageData(res.data))
       .catch( err => {
         console.log(err);
       })
-  }, [inputDate]);
+  }, [callURL]);
   
 
   return (
@@ -44,7 +42,7 @@ function App() {
         app! Have fun <span role='img' aria-label='go!'>🚀</span>!
       </p> */}
       {
-        <Header date={inputDate} />
+        <Header date={moment(imageData.date).format('LL')} />
       }
       {
 
