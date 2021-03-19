@@ -5,14 +5,15 @@ import styled from 'styled-components';
 // The information section displays data from the NASA image object about the particular image for a given day
 
 const StyledInfoSection = styled.section `
-  color: 'purple';
+  color: #221C35';
 `
 
 export default function Details (props) {
   return (
-    <StyledInfoSection className='info-container'>
+    <StyledInfoSection>
       <h2>About This Image</h2>
       <p>{props.explanation}</p>
+      <br></br>
     </StyledInfoSection>
   );
 }
