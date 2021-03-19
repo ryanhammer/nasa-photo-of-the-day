@@ -5,8 +5,8 @@ import React from 'react';
 export default function Header (props) {
   return (
     <header className='header-container'>
-      <h1>NASA Image of the Day!</h1>
-      <h3>Date: {props.date}</h3>
+      <h1>Welcome to the NASA Image of the Day App!</h1>
+      <h4> To select a different date, use the input below. You are currently viewing the image for: {props.date}</h4>
     </header>
   );
 }

@@ -13,29 +13,46 @@ import Details from './Details';
 import './App.css';
 
 function App() {
+  // Use moment.js to convert date and time formats
+  const moment = require('moment');
+  
+  // Create slice of state for both date and called data
+  const currentDate = moment(Date()).format('YYYY-MM-DD');
+  const [inputDate, setInputDate] = useState(currentDate);
+  // console.log(inputDate);
   const [imageData, setImageData] = useState({});
+  // const newDate = document.addEventListener
+
+  const getNewDate = () => {
+    setInputDate(document.querySelector('input').value);
+    console.log(inputDate);
+  }
+
 
   useEffect( () => {
-    axios.get(`${BASE_URL}?api_key=${API_KEY}`)
+    // axios.get(`${BASE_URL}?api_key=${API_KEY}`)
+    axios.get(`${BASE_URL}?api_key=${API_KEY}&date=${inputDate}`)
       .then( res => setImageData(res.data))
       .catch( err => {
         console.log(err);
       })
-  }, []);
-  
-  // Use moment.js to convert date and time formats
-  const moment = require('moment');
+  }, [inputDate]);
   
   return (
     <div className='App'>
-      <p>
+      {/* <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun <span role='img' aria-label='go!'>🚀</span>!
-      </p>
-      <input type="date" min="2017-08-15" max="2018-08-26" ></input>
-      
+      </p> */}
       {
-        <Header date={moment(imageData.date).format('LL')} />
+        <Header date={inputDate} />
+      }
+      {
+        <form>
+          <label>Select any date after June 16, 1995:</label>
+          <input type='date' min='1995-06-16' max= {currentDate} ></input>
+          <button id='subButton' onClick= {getNewDate} >Get Image</button>
+        </form>
       }
       {
         <Image url={imageData.url} title={imageData.title} copyright={imageData.copyright} />
