@@ -5,6 +5,8 @@ import axios from 'axios';
 
 // Header.js will provide the header component for the app
 import Header from './components/Header';
+// Randomizer.js allows the user to randomize the image being displayed
+// import Randomizer from './components/Randomizer';
 // Image.js will provide the image component
 import Image from './components/Image';
 // Details.js will provide components with information about the image
@@ -34,6 +36,7 @@ function App() {
       })
   }, [callURL]);
   
+  console.log(callURL);
 
   return (
     <div className='App'>
@@ -44,9 +47,9 @@ function App() {
       {
         <Header date={moment(imageData.date).format('LL')} />
       }
-      {
-
-      }
+      {/* {
+        <Randomizer getNewImage={getNewImage} />
+      } */}
       {
         <Image url={imageData.url} title={imageData.title} copyright={imageData.copyright} />
       }
